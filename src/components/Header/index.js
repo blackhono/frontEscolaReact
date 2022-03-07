@@ -1,6 +1,5 @@
-import { Link } from '@reach/router'
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import { FaHome, FaSignInAlt, FaUserAlt } from 'react-icons/fa'
 
 import { Nav } from './styled'
