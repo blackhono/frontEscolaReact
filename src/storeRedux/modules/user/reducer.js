@@ -12,11 +12,12 @@ export const loginReducer = (state = initialState, action) => {
       return state
     }
     case types.LOGIN_SUCCESS: {
-      console.log('foi um sucessão! =) (Saga redux)')
-      return state
+      const newState = { ...state }
+      console.log('foi um sucessão! =) (Saga redux)', newState)
+      return newState
     }
     case types.LOGIN_FAILURE: {
-      console.log('falhei em agir =( (Saga redux)')
+      console.log('falhei em agir =( (Saga redux)', state)
       return state
     }
 

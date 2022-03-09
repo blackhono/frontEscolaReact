@@ -1,20 +1,22 @@
-import { call, put, all, takeLatest, takeMaybe } from 'redux-saga/effects'
+import { call, put, all, takeLatest } from 'redux-saga/effects'
 import * as userActions from './actions'
 import * as types from '../types'
+import { api, createSession } from '../../../services/api'
 
-const requisicao = () =>
+const requisicao = (email, password) =>
   new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve()
-    }, 2000)
+    resolve(createSession(email, password))
   })
 
 // aqui recebo o payload da action
-function* exampleRequest() {
+function* exampleRequest({ payload }) {
   try {
-    yield call(requisicao)
-    yield put(userActions.loginSuccess())
-  } catch {
+    const response = yield call(requisicao, payload.email, payload.password)
+    console.log(response)
+    yield put(userActions.loginSuccess(response.data))
+    yield put({ type: types.LOGIN_SUCCESS, payload: response.data })
+  } catch (e) {
+    console.log(e)
     yield put(userActions.loginFailure())
   }
 }

@@ -30,7 +30,7 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault()
-    dispatch(userActions.loginRequest())
+    dispatch(userActions.loginRequest(email, password))
   }
 
   const botaoClicado = useSelector(
