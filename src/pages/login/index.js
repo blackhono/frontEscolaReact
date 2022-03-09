@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { AuthContext } from '../../contexts/auth'
 import * as exampleActions from '../../storeRedux/modules/example/actions'
+import * as userActions from '../../storeRedux/modules/user/actions'
 
 import { Container } from '../../styles/GlobalStyles'
 import { Title } from './styled'
@@ -25,6 +26,11 @@ export default function Login() {
   const handleClickApertaAi = (e) => {
     e.preventDefault()
     dispatch(exampleActions.clickbutton())
+  }
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    dispatch(userActions.loginRequest())
   }
 
   const botaoClicado = useSelector(
@@ -72,6 +78,9 @@ export default function Login() {
           APERTA AI
         </button>
         <p>{botaoClicado ? 'verdadeiro' : 'falso'}</p>
+        <button type='button' onClick={handleLogin}>
+          Login Com Redux Saga
+        </button>
       </div>
     </Container>
   )

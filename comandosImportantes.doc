@@ -31,4 +31,6 @@ mesmo já tendo os CONTEXTS eu decidi usar redux tbm para testar.
 
 npm i redux react-redux
 
+para começar a usar o redux saga
 
+npm i redux-saga

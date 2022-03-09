@@ -30,5 +30,6 @@ module.exports = {
     'react/function-component-definition': 0,
     'consistent-return': 0,
     'no-unused-expressions': 0,
+    'default-param-last': 0,
   },
-};
+}
