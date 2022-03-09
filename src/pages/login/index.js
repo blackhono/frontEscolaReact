@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useContext, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { AuthContext } from '../../contexts/auth'
+import * as exampleActions from '../../storeRedux/modules/example/actions'
 
 import { Container } from '../../styles/GlobalStyles'
 import { Title } from './styled'
@@ -12,11 +14,20 @@ export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const dispatch = useDispatch()
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
     login(email, password)
   }
+
+  const handleClickApertaAi = (e) => {
+    e.preventDefault()
+    dispatch(exampleActions.clickbutton())
+  }
+
+  const botaoClicado = useSelector((state) => state.botaoClicado)
 
   console.log(user)
 
@@ -55,7 +66,10 @@ export default function Login() {
       </Title>
       <div>
         <a href='a'>Sou um link</a>
-        <button type='button'>APERTA AI</button>
+        <button type='button' onClick={handleClickApertaAi}>
+          APERTA AI
+        </button>
+        <p>{botaoClicado ? 'verdadeiro' : 'falso'}</p>
       </div>
     </Container>
   )
