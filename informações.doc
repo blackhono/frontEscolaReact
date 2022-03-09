@@ -1,1 +1,4 @@
 os estados do redux vai dar para ver em toda aplicação
+
+
+nunca devemos manipular o estado atual da aplicação, sempre crie um novo estado.

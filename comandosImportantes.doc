@@ -25,3 +25,10 @@ npm i axios
 
 para mensageria
 npm i react-toastify
+
+
+mesmo já tendo os CONTEXTS eu decidi usar redux tbm para testar.
+
+npm i redux react-redux
+
+

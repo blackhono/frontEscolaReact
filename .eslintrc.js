@@ -18,11 +18,11 @@ module.exports = {
   },
   plugins: ['react', 'prettier', 'react-hooks'],
   rules: {
-    'prettier/prettier': 2,
+    'prettier/prettier': 1,
     'react/jsx-filename-extension': 0,
     'import/prefer-default-export': 0,
     'jsx-quotes': ['error', 'prefer-single'],
-    'react-hooks/rules-of-hooks': 2,
+    'react-hooks/rules-of-hooks': 1,
     'react-hooks/exhaustive-deps': 1,
     'no-unused-vars': 0,
     'react/jsx-no-constructed-context-values': 0,
@@ -31,4 +31,4 @@ module.exports = {
     'consistent-return': 0,
     'no-unused-expressions': 0,
   },
-}
+};
