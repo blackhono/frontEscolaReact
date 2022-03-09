@@ -27,7 +27,9 @@ export default function Login() {
     dispatch(exampleActions.clickbutton())
   }
 
-  const botaoClicado = useSelector((state) => state.botaoClicado)
+  const botaoClicado = useSelector(
+    (state) => state.reduceClickTest.botaoClicado
+  )
 
   console.log(user)
 

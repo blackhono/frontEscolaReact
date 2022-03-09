@@ -3,7 +3,7 @@ const initialState = {
   botaoClicado: false,
 }
 
-export const reducer = (state, action) => {
+export const reducerClickButton = (state, action) => {
   switch (action.type) {
     case 'BOTAO_CLICADO': {
       const newState = { ...state }
