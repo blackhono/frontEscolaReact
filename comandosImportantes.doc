@@ -17,3 +17,11 @@ npm i react-router-dom
 
 para armazenar historico de paginação
 npm i history
+
+
+axios para chamadas da api
+
+npm i axios
+
+para mensageria
+npm i react-toastify

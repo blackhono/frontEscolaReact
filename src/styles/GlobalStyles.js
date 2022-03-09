@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
+import 'react-toastify/dist/ReactToastify.css'
 /* eslint-disable */
 import {
   primaryColor,

@@ -1,19 +1,19 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Navigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 export default function MyRoute({ component: Component, isClosed, ...rest }) {
   const isLoggedIn = false
-
+  console.log(Component, isClosed, rest)
   if (isClosed && !isLoggedIn) {
-    return console.log('não está logado')
+    return (
+      <Navigate
+        to={{ pathname: '/c', state: { prevPath: rest.location.pathname } }}
+      />
+    )
   }
-  /* <Navigate
-    replace
-    to={{ pathname: '/login', state: { prevPath: rest.location.pathname } }}
-  /> */
   // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Route {...rest} component={Component} />
+  return <Route {...rest} component={Component} element={Component} />
 }
 
 MyRoute.defaultProps = {
